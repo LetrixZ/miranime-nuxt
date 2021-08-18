@@ -192,3 +192,14 @@ input[type=number] {
   background-color: rgb(15, 15, 15);
   color: white;
 }
+
+a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+a:hover {
+  color: #F44336 !important;
+  text-decoration: underline;
+}

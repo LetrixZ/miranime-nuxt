@@ -1,56 +1,36 @@
 <template>
-  <div v-if='loading'>
-    <Loading />
-  </div>
-  <div v-else-if='error'>
-    <ErrorMessage :error='error' />
-  </div>
-  <div v-else-if='data' class='container-fluid col-10'>
-    <div class='row'>
-      <div class='col-8'>
-        <h2>{{ data.title }}</h2>
-        <p>
-          <span class='me-2 badge bg-primary'>{{ data.episodes }} episodio(s)</span>
-          <span class='badge bg-dark'>{{ data.status }}</span>
-        </p>
-        <Sources :sites='data.sites' />
-        <div class='my-2'>{{ data.synopsis }}</div>
-        <div class='row mt-2'>
-          <div v-for='n in data.episodes' :key='n' class='col-auto'>
-            <Episode :slug='data.slug' :episode='n' />
-          </div>
-        </div>
-      </div>
-    </div>
+  <div class='container-fluid'>
+    <a @click='to'>
+      <img src='/chevron-left.svg' class='back-btn'>
+    </a>
+    I'm episode
   </div>
 </template>
 
 <script>
-import { inject, onMounted, useRoute } from '@nuxtjs/composition-api'
-import Episode from '~/components/Episode'
-import Sources from '~/components/ItemSources'
-import ErrorMessage from '~/components/ErrorMessage'
-import Loading from '~/components/Loading'
+import { inject, useRouter } from '@nuxtjs/composition-api'
 
 export default {
-  components: { Episode, Sources, ErrorMessage, Loading },
   setup() {
+    // eslint-disable-next-line no-unused-vars
     const store = inject('store')
-    const loading = store.getLoading()
-    const error = store.getError()
-    const currentAnime = store.getCurrentAnime()
 
-    const route = useRoute()
+    const router = useRouter()
 
-    onMounted(() => {
-      store.setCurrentAnime(route.value.params.slug)
-    })
+    const to = () => {
+      router.back()
+    }
 
-    return { loading, error, data: currentAnime }
+    return { to }
   }
 }
 </script>
 
 <style>
+.back-btn {
+  filter: invert();
+  width: 24px;
+  height: 24px;
+}
 
 </style>

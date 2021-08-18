@@ -1,17 +1,17 @@
 <template>
-  <div class="centered">
-    <div class="h2 mb-3">{{ message || "Cargando" }}</div>
-    <div class="spinner-border text-primary" />
+  <div class='centered'>
+    <div class='h2 mb-3'>{{ message || "Cargando" }}</div>
+    <div class='spinner-border text-primary' />
   </div>
 </template>
 
 <script>
 export default {
-  name: "Loading",
+  name: 'Loading',
   props: {
-    message: String,
-  },
-};
+    message: String
+  }
+}
 </script>
 
 <style scoped>

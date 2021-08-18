@@ -1,18 +1,17 @@
 <template>
   <div>
-    <router-link :to="{name: 'Video', params: {episode, slug}}" class="text-decoration-none">
-      <div class="episode d-flex flex-column justify-content-center">
+    <NuxtLink :to='`/anime/${slug}/${episode}`' class='text-decoration-none'>
+      <div class='episode d-flex flex-column justify-content-center'>
         Episodio {{ episode }}
       </div>
-    </router-link>
+    </NuxtLink>
   </div>
 </template>
 
 <script>
 export default {
-  name: "Episode",
-  props: ["episode", "slug"]
-};
+  props: ['episode', 'slug']
+}
 </script>
 
 <style scoped>

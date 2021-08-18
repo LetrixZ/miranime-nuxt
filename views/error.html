@@ -1,86 +1,70 @@
 <!doctype html>
-<html data-n-head-ssr lang="en" data-n-head="%7B%22lang%22:%7B%22ssr%22:%22en%22%7D%7D">
+<html lang='es'>
 
 <head>
-    <title>miranime-nuxt</title>
-    <meta data-n-head="ssr" charset="utf-8">
-    <meta data-n-head="ssr" name="viewport" content="width=device-width, initial-scale=1">
-    <meta data-n-head="ssr" data-hid="description" name="description" content="">
-    <meta data-n-head="ssr" name="format-detection" content="telephone=no">
-    <link data-n-head="ssr" rel="icon" type="image/x-icon" href="/favicon.ico">
-    <link rel="preload" href="/_nuxt/runtime.js" as="script">
-    <link rel="preload" href="/_nuxt/commons/app.js" as="script">
-    <link rel="preload" href="/_nuxt/vendors/app.js" as="script">
-    <link rel="preload" href="/_nuxt/app.js" as="script">
-    <style data-vue-ssr-id="6bda2c3f:0">
-        @import url(https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap);
-    </style>
-    <style>
-        body {
-            font-family: 'Open Sans';
-            background-color: rgb(6, 7, 7);
-            color: rgb(232, 230, 227);
-            overflow: hidden;
-            height: 100vh;
-            width: 100vw;
-        }
+  <title>miranime-nuxt</title>
+  <meta charset='utf-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <meta data-hid='description' name='description' content=''>
+  <meta name='format-detection' content='telephone=no'>
+  <link rel='icon' type='image/x-icon' href='/favicon.ico'>
+  <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css' rel='stylesheet'
+        integrity='sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We' crossorigin='anonymous'>
+  <style>
+    body {
+      background-color: #080808;
+      color: rgb(255, 255, 255);
+      overflow: hidden;
+      height: 100vh;
+      width: 100vw;
+    }
 
-        .centered[data-v-6fd3d78c] {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            min-height: 100vh;
-        }
+    .centered {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      min-height: 100vh;
+    }
 
-        h2,
-        .h2 {
-            font-size: calc(1.325rem + 0.9vw);
-            margin-top: 0;
-            margin-bottom: 0.5rem;
-            font-weight: 500;
-            line-height: 1.2;
-        }
+    .h2 {
+      font-size: calc(1.325rem + 0.9vw);
+      margin-top: 0;
+      margin-bottom: 0.5rem;
+      font-weight: 500;
+      line-height: 1.2;
+    }
 
-        .text-muted {
-            --darkreader-text--bs-text-opacity: 1;
-            color: rgb(158, 150, 137) !important;
-        }
+    .text-muted {
+      --darkreader-text--bs-text-opacity: 1;
+      color: #6c757d !important;
+    }
 
-        .mb-2 {
-            margin-bottom: 0.5rem !important;
-        }
+    .mb-2 {
+      margin-bottom: 0.5rem !important;
+    }
 
-        a {
-            color: rgb(232, 230, 227);
-            text-decoration: none;
-        }
+    a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+    }
 
-        a:hover {
-            color: #c3362b;
-            text-decoration: underline;
-        }
-    </style>
+    a:hover {
+      color: #c3362b;
+      text-decoration: underline;
+    }
+  </style>
 </head>
 
 <body>
-    <script>
-        var name = "{{ name }}";
-        console.log(name);
-    </script>
-    <div data-server-rendered="true" id="__nuxt">
-        <div id="__layout">
-            <div>
-                <div>
-                    <div class="centered" data-v-6fd3d78c><span class="h2" data-v-6fd3d78c>
-                            Anime '/api' no encontrado
-                        </span> <span class="text-muted mb-2" data-v-6fd3d78c>This page could not be found</span> <a
-                            href="/" class="nuxt-link-active" data-v-6fd3d78c>Inicio</a></div>
-                </div>
-            </div>
-        </div>
-    </div>
+<div class='centered'>
+  <span class='h2'><%- message %></span>
+  <span class='text-muted mb-2'><%- error %></span>
+  <a href='/'>Inicio</a>
+  <span class='fixed-bottom mb-2 text-danger fw-bold badge user-select-none'>Miranime API</span>
+</div>
 </body>
 
 </html>
